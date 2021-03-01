@@ -1,0 +1,5 @@
+Global depth : 2
+00 : [Local depth:2]<e4><e12><e32><e16>
+01 : [Local depth:2]<e1><e5><e21>
+10 : [Local depth:2]<e10>
+11 : [Local depth:2]<e15><e7><e19>

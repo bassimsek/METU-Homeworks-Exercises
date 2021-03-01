@@ -1,0 +1,54 @@
+# Name: Orcun Bassimsek
+# ID: 2098804
+
+.pos 0 # setup code
+    irmovq stack, %rsp   # setup stack pointer
+    irmovq ele0, %rdi    # set paramter of function
+    call rrev	
+    halt                 # halt the execution
+    
+
+# A sample five-element linked list
+# Aligned absolutely to make observing
+# differences in the memory layout easier
+.pos 0x100
+ele0:
+	.quad 0x0000a
+	.quad ele1
+ele1:
+	.quad 0x000b0
+	.quad ele2
+ele2:
+	.quad 0x00c00
+	.quad ele3
+ele3:
+	.quad 0x0d000
+	.quad ele4
+ele4:
+	.quad 0xe0000
+	.quad 0
+
+rrev:
+	andq %rdi, %rdi
+	je done
+	mrmovq $8(%rdi), %r14
+	andq %r14, %r14
+	je done
+	pushq %r10
+	rrmovq %rdi, %r10
+	mrmovq $8(%rdi), %rdi
+	call rrev
+	rmmovq %r10, $0x18(%r10)
+	irmovq $0, %r11
+	rmmovq %r11, $8(%r10)
+	popq %r10
+	
+done:
+	rrmovq %rdi, %rax
+	ret
+	
+	
+	
+# stack grows upwards, so leave some space
+.pos 0x300
+stack:

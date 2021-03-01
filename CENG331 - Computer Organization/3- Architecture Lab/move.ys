@@ -1,0 +1,80 @@
+# Name: Orcun Bassimsek
+# ID: 2098804
+
+.pos 0 # setup code
+    irmovq stack, %rsp   # setup stack pointer
+    irmovq arrayp3, %rdi    # set paramter of function
+    irmovq array, %rsi
+    irmovq $5, %rdx
+    call move			
+    halt                 # halt the execution
+    
+   
+    
+# an array of 9 elements
+# again, positioned absolutely
+.pos 0x100
+array:
+	.quad 0x000000001
+	.quad 0x000000020
+	.quad 0x000000300
+# a pointer to the fourth element here
+arrayp3:
+	.quad 0x000004000
+	.quad 0x000050000
+	.quad 0x000600000
+	.quad 0x007000000
+	.quad 0x080000000
+	.quad 0x900000000 
+
+
+
+
+
+move:
+	rrmovq %rdi, %r10
+	rrmovq %rsi, %r11
+	xorq %rax, %rax
+	irmovq $8, %r12
+	irmovq $8, %r8
+	rrmovq %r11, %r14
+	subq %r10, %r14
+	jge test
+	rrmovq %rdx, %r14
+	addq %r14, %r14
+	addq %r14, %r14
+	addq %r14, %r14
+	addq %r14, %r11
+	subq %r10, %r11
+	jle test
+	rrmovq %rdx, %r14
+	iaddq $-1, %r14
+	addq %r14, %r14
+	addq %r14, %r14
+	addq %r14, %r14
+	addq %r14, %rdi
+	addq %r14, %rsi
+	irmovq $-8, %r12
+	jmp test
+
+
+loop:
+	mrmovq (%rsi), %r11
+	xorq %r11, %rax
+	mrmovq (%rsi), %r14
+	rmmovq %r14, (%rdi)
+	addq %r12, %rdi
+	addq %r12, %rsi
+	iaddq $-1, %rdx
+	
+
+test:
+	andq %rdx, %rdx
+	jne loop
+	ret
+	
+
+
+# stack grows upwards, so leave some space
+.pos 0x300
+stack:
