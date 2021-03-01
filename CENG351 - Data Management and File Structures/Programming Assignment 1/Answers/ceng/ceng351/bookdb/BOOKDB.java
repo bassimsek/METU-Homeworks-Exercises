@@ -7,10 +7,10 @@ import java.util.List;
 
 public class BOOKDB {
 
-    private static String user = "2098804";
-    private static String password = "3519865d";
-    private static String host = "144.122.71.65";
-    private static String database = "db2098804";
+    private static String user = "example_user";
+    private static String password = "example_password";
+    private static String host = "example_host";
+    private static String database = "example_db";
     private static int port = 8084;
 
     private Connection con;
