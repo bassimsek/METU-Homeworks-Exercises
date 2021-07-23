@@ -1,0 +1,1 @@
+../../../ext2sutils dup input.img /home/alice/docs/bank_info.txt /home/velice/.sneaky/hehehee.txt

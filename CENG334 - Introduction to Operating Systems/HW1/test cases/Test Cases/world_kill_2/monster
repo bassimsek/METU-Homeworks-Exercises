@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+export log_prefix=world_kill_2
+export c3x5_marg1=5
+export c3x5_marg2=5
+export c3x5_marg3=1
+export c3x5_marg4=2
+export c1x1_marg1=10
+export c1x1_marg2=6
+export c1x1_marg3=4
+export c1x1_marg4=2
+exec ./test_monster "$@"

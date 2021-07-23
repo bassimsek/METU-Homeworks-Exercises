@@ -1,0 +1,9 @@
+21 21
+10 0
+10 10
+./nested/pl/ayer/path/player_exec 30 20 3
+4
+./a_monster A 1 1 50 90 10 16
+./another_monster A 1 19 25 90 10 16
+./nested/monster B 19 1 17 22 1 5
+./yet/another/monster B 19 19 7 5 5 5

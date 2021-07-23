@@ -1,0 +1,28 @@
+Argument 1: '1'
+Argument 2: '1'
+Argument 3: '1'
+Argument 4: '1'
+
+Server to Monster Message:
+New Position:(1,1)
+Damage:0
+Player Coodinate:(6,5)
+Game Over: 0
+
+Monster to Server Response: Moving to (2,2)
+
+waiting
+waiting
+Server to Monster Message:
+New Position:(2,2)
+Damage:0
+Player Coodinate:(6,4)
+Game Over: 0
+
+Monster to Server Response: Moving to (3,3)
+
+waiting
+waiting
+Game Over: 1
+
+Exiting

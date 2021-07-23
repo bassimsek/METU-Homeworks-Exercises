@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+export parg3=3
+export parg4=1
+export parg5=3
+export log_prefix=world_wait
+export add_waits=1
+exec ./test_player "$@"

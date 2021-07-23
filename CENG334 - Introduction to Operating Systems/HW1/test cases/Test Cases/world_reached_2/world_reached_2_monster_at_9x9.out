@@ -1,0 +1,30 @@
+Argument 1: '50'
+Argument 2: '17'
+Argument 3: '7'
+Argument 4: '9'
+
+Server to Monster Message:
+New Position:(9,9)
+Damage:0
+Player Coodinate:(7,6)
+Game Over: 0
+
+Monster to Server Response: Moving to (8,8)
+
+Server to Monster Message:
+New Position:(8,8)
+Damage:0
+Player Coodinate:(8,7)
+Game Over: 0
+
+Monster to Server Response: Attacking with:5
+
+Server to Monster Message:
+New Position:(8,8)
+Damage:7
+Player Coodinate:(8,7)
+Game Over: 0
+
+Monster to Server Response: Dead
+
+Exiting

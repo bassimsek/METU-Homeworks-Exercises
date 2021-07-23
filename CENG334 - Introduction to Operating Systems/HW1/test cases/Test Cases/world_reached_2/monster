@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+export log_prefix=world_reached_2
+export c9x9_marg1=5
+export c9x9_marg2=5
+export c9x9_marg3=1
+export c9x9_marg4=2
+export c1x1_marg1=40
+export c1x1_marg2=30
+export c1x1_marg3=4
+export c1x1_marg4=2
+exec ./test_monster "$@"

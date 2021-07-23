@@ -1,0 +1,45 @@
+30 30
+2 0
+28 28
+./player 40 80 0
+40
+./monster a 5 23 1 1 1 2
+./monster b 5 9 1 1 1 2
+./monster c 6 6 1 1 1 2
+./monster d 5 7 1 1 1 2
+./monster e 5 21 1 1 1 2
+./monster f 5 13 1 1 1 2
+./monster g 5 12 1 1 1 2
+./monster h 6 9 1 1 1 2
+./monster i 5 19 1 1 1 2
+./monster j 6 24 1 1 1 2
+./monster k 5 8 1 1 1 2
+./monster l 5 20 1 1 1 2
+./monster m 5 24 1 1 1 2
+./monster n 6 11 1 1 1 2
+./monster o 5 22 1 1 1 2
+./monster p 6 14 1 1 1 2
+./monster q 5 14 1 1 1 2
+./monster r 6 13 1 1 1 2
+./monster s 6 22 1 1 1 2
+./monster t 6 7 1 1 1 2
+./monster u 5 11 1 1 1 2
+./monster v 6 17 1 1 1 2
+./monster w 6 23 1 1 1 2
+./monster x 6 10 1 1 1 2
+./monster y 5 17 1 1 1 2
+./monster z 5 18 1 1 1 2
+./monster A 6 16 1 1 1 2
+./monster B 6 21 1 1 1 2
+./monster C 6 8 1 1 1 2
+./monster D 5 5 1 1 1 2
+./monster E 6 18 1 1 1 2
+./monster F 5 16 1 1 1 2
+./monster G 6 19 1 1 1 2
+./monster H 6 5 1 1 1 2
+./monster I 6 20 1 1 1 2
+./monster J 5 15 1 1 1 2
+./monster K 5 10 1 1 1 2
+./monster L 5 6 1 1 1 2
+./monster M 6 12 1 1 1 2
+./monster N 6 15 1 1 1 2

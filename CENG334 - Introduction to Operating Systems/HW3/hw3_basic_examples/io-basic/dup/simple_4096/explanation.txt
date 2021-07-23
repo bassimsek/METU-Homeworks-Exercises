@@ -1,0 +1,1 @@
+A simple layout with bs=4096. A file under root is duped into a deeper directory. As easy as it gets!

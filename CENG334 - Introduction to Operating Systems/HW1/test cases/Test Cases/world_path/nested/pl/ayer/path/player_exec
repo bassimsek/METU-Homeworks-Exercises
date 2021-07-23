@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+export parg3=1
+export parg4=1
+export parg5=0
+exec ./test_player "$@"

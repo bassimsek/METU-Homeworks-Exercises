@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Games</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" >CENG495</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/user}">User</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/games}">Games <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container" style="padding-top: 1cm">
+
+    <div class="alert alert-primary" role="alert"
+         th:text="${'Logged in user :' +loggedInUser}"
+         th:if="${loggedInUser}"></div>
+
+    <div class="alert alert-success" role="alert" th:text="${rating_success}" th:if="${rating_success}"></div>
+    <div class="alert alert-success" role="alert" th:text="${playing_success}" th:if="${playing_success}"></div>
+    <div class="alert alert-success" role="alert" th:text="${comment_success}" th:if="${comment_success}"></div>
+
+    <h3 style="padding-top: 1cm;"><strong>Game List</strong></h3>
+    <hr>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Genre(s)</th>
+            <th>Photo</th>
+            <th>Play Time</th>
+            <th>Rating</th>
+            <th>User - Comment</th>
+            <th>Optional Fields</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempGame : ${games}">
+            <td th:text="${tempGame.name}"/>
+            <td th:text="${tempGame.genres}"/>
+            <td> <img th:src="@{${tempGame.photo}}" width="90" height="150"> </td>
+            <td th:text="${tempGame.playTime}"/>
+            <td th:text="${tempGame.rating}"/>
+            <td>
+                <table>
+                    <th:block th:each="gameComments: ${tempGame.allComments}">
+                        <tr>
+                            <td th:text="${gameComments.username}"></td>
+                            <td th:text="${gameComments.comment}"></td>
+                        </tr>
+                    </th:block>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <th:block >
+                        <tr>
+                            <td th:if="${tempGame.releaseDate} != ''" th:text="'Release Date: ' + ${tempGame.releaseDate}"></td>
+                            <td th:if="${tempGame.pcRequirements}!= ''" th:text="'PC Requirements: ' + ${tempGame.pcRequirements}"></td>
+                            <td th:if="${tempGame.developerName}!= ''" th:text="'Developer Name: ' + ${tempGame.developerName}"></td>
+                            <td th:if="${tempGame.advertisementQuotes}!= ''" th:text="'Advertisements: ' + ${tempGame.advertisementQuotes}"></td>
+                        </tr>
+                    </th:block>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<footer class="page-footer font-small blue" style="padding-top: 2cm">
+    <div class="footer-copyright text-center py-3">© 2021 CENG495 - Homework2
+    </div>
+</footer>
+
+</body>
+</html>

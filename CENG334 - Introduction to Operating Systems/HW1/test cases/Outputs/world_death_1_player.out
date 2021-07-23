@@ -1,0 +1,25 @@
+Argument 1: '15'
+Argument 2: '0'
+Argument 3: '30'
+Argument 4: '20'
+Argument 5: '1'
+
+Player to Server Response: Ready
+
+Server to Player Message:
+Total Damage:0
+Alive Monster Count:1
+Coordinates: (13,10)
+Game Over:0
+
+Player to Server Response: Attacking: 7
+
+Server to Player Message:
+Total Damage:20
+Alive Monster Count:1
+Coordinates: (13,10)
+Game Over:0
+
+Player to Server Response: Dead
+
+Exiting

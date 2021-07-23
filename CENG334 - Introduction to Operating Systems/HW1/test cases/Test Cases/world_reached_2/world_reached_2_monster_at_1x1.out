@@ -1,0 +1,80 @@
+Argument 1: '9'
+Argument 2: '9'
+Argument 3: '9'
+Argument 4: '9'
+
+Server to Monster Message:
+New Position:(1,1)
+Damage:0
+Player Coodinate:(7,6)
+Game Over: 0
+
+Monster to Server Response: Moving to (2,2)
+
+Server to Monster Message:
+New Position:(2,2)
+Damage:0
+Player Coodinate:(8,7)
+Game Over: 0
+
+Monster to Server Response: Moving to (3,3)
+
+Server to Monster Message:
+New Position:(3,3)
+Damage:0
+Player Coodinate:(8,7)
+Game Over: 0
+
+Monster to Server Response: Moving to (4,4)
+
+Server to Monster Message:
+New Position:(4,4)
+Damage:0
+Player Coodinate:(8,8)
+Game Over: 0
+
+Monster to Server Response: Moving to (5,5)
+
+Server to Monster Message:
+New Position:(5,5)
+Damage:0
+Player Coodinate:(8,9)
+Game Over: 0
+
+Monster to Server Response: Moving to (6,6)
+
+Server to Monster Message:
+New Position:(6,6)
+Damage:0
+Player Coodinate:(8,10)
+Game Over: 0
+
+Monster to Server Response: Moving to (7,7)
+
+Server to Monster Message:
+New Position:(7,7)
+Damage:0
+Player Coodinate:(8,11)
+Game Over: 0
+
+Monster to Server Response: Moving to (8,8)
+
+Server to Monster Message:
+New Position:(8,8)
+Damage:0
+Player Coodinate:(8,12)
+Game Over: 0
+
+Monster to Server Response: Moving to (8,9)
+
+Server to Monster Message:
+New Position:(8,9)
+Damage:0
+Player Coodinate:(8,13)
+Game Over: 0
+
+Monster to Server Response: Moving to (8,10)
+
+Game Over: 1
+
+Exiting

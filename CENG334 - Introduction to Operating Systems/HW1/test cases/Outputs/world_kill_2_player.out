@@ -1,0 +1,53 @@
+Argument 1: '2'
+Argument 2: '0'
+Argument 3: '5'
+Argument 4: '12'
+Argument 5: '1'
+
+Player to Server Response: Ready
+
+Server to Player Message:
+Total Damage:0
+Alive Monster Count:2
+Coordinates: (1,1) (3,5)
+Game Over:0
+
+Player to Server Response: Attacking: 0 7
+
+Server to Player Message:
+Total Damage:0
+Alive Monster Count:1
+Coordinates: (2,2)
+Game Over:0
+
+Player to Server Response: Attacking: 7
+
+Server to Player Message:
+Total Damage:6
+Alive Monster Count:1
+Coordinates: (2,2)
+Game Over:0
+
+Player to Server Response: Attacking: 7
+
+Server to Player Message:
+Total Damage:6
+Alive Monster Count:1
+Coordinates: (2,2)
+Game Over:0
+
+Player to Server Response: Attacking: 7
+
+Server to Player Message:
+Total Damage:6
+Alive Monster Count:1
+Coordinates: (2,2)
+Game Over:0
+
+Player to Server Response: Attacking: 7
+
+Server to Player Message:
+
+Game Over:1
+
+Exiting

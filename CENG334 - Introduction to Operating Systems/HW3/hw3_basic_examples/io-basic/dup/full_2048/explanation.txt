@@ -1,0 +1,1 @@
+This time we have a bs=2048 filesystem, and the root directory's first data block is almost full. The given dup command necessitates a long filename and triggers a new data block allocation.

@@ -1,0 +1,38 @@
+Argument 1: '6'
+Argument 2: '0'
+Argument 3: '47'
+Argument 4: '5'
+Argument 5: '0'
+
+waiting
+Player to Server Response: Ready
+
+waiting
+Server to Player Message:
+Total Damage:0
+Alive Monster Count:1
+Coordinates: (1,1)
+Game Over:0
+
+waiting
+Player to Server Response: Moving to (6,5)
+
+waiting
+Server to Player Message:
+Total Damage:0
+Alive Monster Count:1
+Coordinates: (2,2)
+Game Over:0
+
+waiting
+Player to Server Response: Moving to (6,4)
+
+waiting
+Server to Player Message:
+Total Damage:0
+Alive Monster Count:1
+Coordinates: (3,3)
+Game Over:0
+
+waiting
+Exiting

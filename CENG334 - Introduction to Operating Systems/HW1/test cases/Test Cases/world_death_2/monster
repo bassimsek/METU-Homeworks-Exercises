@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+export log_prefix=world_death_2
+export marg1=5
+export marg2=9
+export marg3=0
+export marg4=6
+exec ./test_monster "$@"

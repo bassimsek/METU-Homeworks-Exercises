@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+export check_sorted=1
+exec ./test_world "$@"

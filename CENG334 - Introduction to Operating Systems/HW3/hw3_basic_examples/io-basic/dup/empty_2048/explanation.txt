@@ -1,0 +1,1 @@
+Exactly the same layout as full_2048. However, this time the second data block of the directory is already pre-allocated and contains a zero entry. Will you allocate a new block? Spoiler: don't!

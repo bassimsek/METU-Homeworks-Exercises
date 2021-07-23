@@ -1,0 +1,321 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{tkz-euclide}
+\pgfplotsset{compat=1.13}
+
+\usetikzlibrary{angles,quotes}
+
+
+
+
+
+
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  TONKAL, Özlem\\
+  \texttt{e1881531@ceng.metu.edu.tr}
+  \and
+  BAŞŞİMŞEK, Orçun\\
+  \texttt{e2098804@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2021 \\
+Homework 4}
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    \[ y''(t) = 4x'(t) - 5y'(t) + x(t) -6y(t) \]
+    \item %write the solution of q1b
+    To find frequency reponse, we need to put $x(t) = e^{jwt}$ to the system, and we will get $y(t) = H(jw) \times e^{jwt}$. Therefore, when we put these values to the above system equation: 
+    \[ (jw)^2H(jw)e^{jwt} = 4jwe^{jwt} -5jwH(jw)e^{jwt} + e^{jwt} -6H(jw)e^{jwt} \]
+    \[ (jw)^2H(jw)e^{jwt} +5jwH(jw)e^{jwt} +6H(jw)e^{jwt}  = 4jwe^{jwt} + e^{jwt} \]
+    \[ H(jw)e^{jwt}(j^2w^2 + 5jw + 6) = e^{jwt}(4jw+1) \]
+    \[ H(jw) = \frac{4jw+1}{j^2w^2 + 5jw + 6}\]
+    \item %write the solution of q1c
+    In LTI system, we know that Fourier transform of impulse response gives us frequency response. From part (b), we already know frequency response. Therefore,
+    \[ H(jw) = \frac{4jw+1}{j^2w^2 + 5jw + 6}\]
+    \[ = \frac{4jw+1}{(jw+3)(jw+2)}\]
+    \[ = \frac{4jw+1}{(jw+3)(jw+2)} = \frac{A}{jw+3} + \frac{B}{jw+2} \]
+    \[ 4jw+1 = Ajw + 2A + Bjw + 3B \]
+    \[ 4 = A+B \]
+    \[ 1 = 2A+3B \]
+    Here, we find $A = 11$ and $B=-7$. Therefore, our frequency response can be written as: 
+    \[ H(jw) = \frac{11}{jw+3} - \frac{7}{jw+2} \]
+    We know that when $x(t) = e^{-at}u(t)$, $X(jw) = \frac{1}{a + jw}$ (eqn 1). \\
+     By using this, our impulse response will be:
+    \[ h(t) = (11e^{-3t} -7e^{-2t})u(t) \]
+    \item %write the solution of q1d
+    We know that $Y(jw) = H(jw) \times X(jw)$. We have already found $H(jw)$ in part (b). Therefore, we need to find $X(jw)$ for $x(t) = \frac{1}{4}e^{-t/4}u(t)$.
+    \[ X(jw) = \frac{1}{4} \times \frac{1}{\frac{1}{4} + jw} \ (by \ using \ eqn \ 1 \ again) \]
+    \[ X(jw) = \frac{1}{1+4jw} \]
+    Now, we can find $Y(jw) = H(jw) \times X(jw)$
+    \[ Y(jw) = H(jw) \times X(jw) = \frac{4jw+1}{(jw+3)(jw+2)} \times \frac{1}{1+4jw} \]
+    \[ Y(jw) = \frac{1}{(jw+3)(jw+2)} \]
+    \[ \frac{1}{(jw+3)(jw+2)} = \frac{A}{jw+3} + \frac{B}{jw+2} \]
+    \[ 1 = Ajw + 2A + Bjw + 3B \]
+    \[ A+B = 0 \]
+    \[ 2A + 3B = 1 \]
+    Here, we find $A = -1$ and $B = 1$. Therefore, $Y(jw)$ will be:
+    \[ Y(jw) = - \frac{1}{jw+3} + \frac{1}{jw+2} \]
+    By using eqn 1, we can reach $y(t)$ as:
+    \[ y(t) = (-e^{-3t} + e^{-2t})u(t) \]
+    \end{enumerate}
+
+\item %write the solution of q2
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    \[ H(jw) = \frac{jw+4}{-w^2+5jw+6}  \]
+    We know that $Y(jw) = X(jw) \times H(jw)$. Therefore, 
+    \[ H(jw) = \frac{Y(jw)}{X(jw)} = \frac{jw+4}{-w^2+5jw+6} \]
+    \[ (-w^2)Y(jw) +5jwY(jw) +6Y(jw) = jwX(jw)+4X(jw) \]
+    Since $j^2 = -1$, we can write $(-w^2) = (jw)^2$. Therefore, above equation will be: 
+    \[ (jw)^2Y(jw) +5jwY(jw) +6Y(jw) = jwX(jw)+4X(jw) \]
+    By looking the Fourier transform table we can find inverse Fourier transform of this equation. And, this gives us a differential equation which represents the system.
+    \[ \frac{d^2y(t)}{dt^2} + 5\frac{dy(t)}{dt} + 6y(t) = \frac{dx(t)}{dt} + 4x(t) \]
+    \item %write the solution of q2b
+    \[ H(jw) = \frac{jw+4}{-w^2+5jw+6} = \frac{jw+4}{(jw+2)(jw+3)}  \]
+    \[ = \frac{jw+4}{(jw+2)(jw+3)} = \frac{A}{jw+2} + \frac{B}{jw+3}  \]
+    \[ Ajw + 3A + Bjw + 2B = jw+4 \]
+    \[ A+B = 1 \]
+    \[ 3A+2B = 4 \]
+    Here, we find $A = 2$ and $B=-1$. Therefore,
+    \[ H(jw) = \frac{2}{jw+2} - \frac{1}{jw+3} \]
+    By using Fourier transform of $e^{-at}u(t)$ is $\frac{1}{a + jw}$, impulse response will be:
+    \[ h(t) = (2e^{-2t} - e^{-3t})u(t) \]
+    \item %write the solution of q2c
+    We know that $Y(jw) = X(jw) \times H(jw)$. We have already known $H(jw)$. Thus, we need to find $X(jw)$ for given input $x(t) = e^{-4t}u(t)  -te^{-4t}u(t)$ \\
+    By using Fourier transform of $e^{-at}u(t)$ is $\frac{1}{a + jw}$ and by using Fourier transform of $te^{-at}u(t)$ is $\frac{1}{(a + jw)^2}$ from the transformation tables of the textbook, we can find:
+    \[ X(jw) = \frac{1}{4+jw} - \frac{1}{(4+jw)^2}  \]
+    \[ X(jw) = \frac{3+jw}{(4+jw)^2}  \]
+    Since $Y(jw) = X(jw) \times H(jw)$
+    \[ Y(jw) = X(jw) \times H(jw) = \frac{3+jw}{(4+jw)^2} \times \frac{jw+4}{(jw+2)(jw+3)} \]
+    \[ Y(jw) = \frac{1}{(jw+4)(jw+2)}\]
+     
+    \item %write the solution of q2d
+    \[ Y(jw) = \frac{1}{(jw+4)(jw+2)} = \frac{A}{jw+4} + \frac{B}{jw+2} \]
+    \[ Ajw + 2A +Bjw + 4B = 1 \]
+    \[ A+B = 0 \]
+    \[ 2A+4B = 1 \]
+    Here, we find $A = -\frac{1}{2}$ and $B = \frac{1}{2}$. Therefore, $Y(jw)$ will be
+    \[ Y(jw) = \frac{-\frac{1}{2}}{jw+4} + \frac{\frac{1}{2}}{jw+2} \]
+    By using Fourier transform of $e^{-at}u(t)$ is $\frac{1}{a + jw}$
+    \[ y(t) = (-\frac{1}{2}e^{-4t} + \frac{1}{2}e^{-2t})u(t) \]
+    \end{enumerate}
+
+\item %write the solution of q3  
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q3a
+    By using analysis equation:
+    \[ X(jw) = \int_{-\infty}^{\infty} x(t)e^{-jwt} \,dt  \]
+    When we put $x(t) = e^{-|t|}$
+    \[ X(jw) = \int_{-\infty}^{\infty} e^{-|t|}e^{-jwt} \,dt \]
+    \[ = \int_{-\infty}^{0} e^{t}e^{-jwt} \,dt + \int_{0}^{\infty} e^{-t}e^{-jwt} \,dt \]
+    \[ = \int_{-\infty}^{0} e^{(1-jw)t} \,dt + \int_{0}^{\infty} e^{(-1-jw)t} \,dt \]
+    \[ = \left(|_{-\infty}^{0} \ \ \frac{e^{(1-jw)t}}{1-jw} \right) \ \ \ + \ \ \ \left(|_{0}^{\infty} \ \ \frac{e^{(-1-jw)t}}{-1-jw} \right)  \]
+    \[ = \frac{1}{1-jw} + \frac{1}{1+jw} \]
+    \[X(jw) = \frac{2}{1+w^2} \ \ \ [RESULT] \]
+     
+    \item %write the solution of q3b
+    We can use "Differentiation in Frequency" property of Table 4.1 of our Textbook for this question. In other words, \\
+    \\
+    Fourier transform of $tx(t)$ will be $j\frac{d}{dw}X(jw)$. \\
+    \\
+    Therefore, Fourier transform of $te^{-|t|}$ will be:
+    \[ = j\frac{d}{dw}X(jw) = j\frac{d}{dw}\left(\frac{2}{1+w^2} \right) \]
+    \[ = j\left(\frac{-(2w) \times 2}{(1+w^2)^2}\right) \]
+    \[ = \frac{-4jw}{(1+w^2)^2} \ \ \ [RESULT] \]
+    
+    \item %write the solution of q3c
+    By using synthesis equation:
+    \[ x(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} X(jw)e^{jwt} \,dw \]
+    And, by using duality property of Fourier transform with the result of part (b):
+    \[ x(t) = te^{-|t|} = \frac{1}{2\pi}\int_{-\infty}^{\infty} \frac{-4jw}{(1+w^2)^2}e^{jwt} \,dw  \]
+    Multiplying both side by $2\pi$ and replacing $t$ by $-t$, we get:
+    \[ 2\pi(-t)e^{-|-t|} = \int_{-\infty}^{\infty} \frac{-4jw}{(1+w^2)^2}e^{jw(-t)} \,dw  \]
+    \[ -2\pi te^{-|t|} = \int_{-\infty}^{\infty} \frac{-4jw}{(1+w^2)^2}e^{-jwt} \,dw  \]
+    Then, we can interchange the name of the variables $t$ and $w$:
+    \[ -2\pi we^{-|w|} = \int_{-\infty}^{\infty} \frac{-4jt}{(1+t^2)^2}e^{-jwt} \,dt  \]
+    Multiply right hand side's both numerator and denominator with $j$:
+    \[ -2\pi we^{-|w|} = \int_{-\infty}^{\infty} \frac{-4(j^2)t}{(1+t^2)^2 \times (j)}e^{-jwt} \,dt  \]
+    \[ -2\pi we^{-|w|} = \frac{1}{j}\int_{-\infty}^{\infty} \frac{4t}{(1+t^2)^2}e^{-jwt} \,dt  \]
+    \[ -j2\pi we^{-|w|} = \int_{-\infty}^{\infty} \frac{4t}{(1+t^2)^2}e^{-jwt} \,dt  \]
+    By considering analysis equation $X(jw) = \int_{-\infty}^{\infty} x(t)e^{-jwt} \,dt$, it is clear that: \\
+     Fourier transform of $\frac{4t}{(1+t^2)^2}$ is $-j2\pi we^{-|w|}$ \  [RESULT]
+    \end{enumerate}
+
+\item %write the solution of q4
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+    $\frac{3}{4}y[n-1] + 2x[n] - \frac{1}{8}y[n-2] = y[n]$
+    \item %write the solution of q4b
+    By applying Fourier transform to the above equation:
+	\[ \frac{3}{4}e^{-jw}Y(e^{jw}) + 2X(e^{jw}) - \frac{1}{8}e^{-2jw}Y(e^{jw}) = Y(e^{jw}) \]
+	\[ 2X(e^{jw}) = Y(e^{jw}) -\frac{3}{4}e^{-jw}Y(e^{jw}) + \frac{1}{8}e^{-2jw}Y(e^{jw}) \]
+	\[ 2X(e^{jw}) = Y(e^{jw})[1 -\frac{3}{4}e^{-jw} + \frac{1}{8}e^{-2jw}] \]
+	\[ \frac{2}{1 -\frac{3}{4}e^{-jw} + \frac{1}{8}e^{-2jw}} = \frac{Y(e^{jw})}{X(e^{jw})}\]
+	\[ \frac{16}{8 - 6e^{-jw} + e^{-2jw}} = H(e^{jw}) \ \ \ [RESULT] \]   
+    \item %write the solution of q4c
+    \[ H(e^{jw}) = \frac{16}{e^{-2jw} -6e^{-jw} + 8} = \frac{16}{(e^{-jw} -4)(e^{-jw}-2)} \]
+    \[ \frac{16}{(e^{-jw} -4)(e^{-jw}-2)} = \frac{A}{e^{-jw} -4} + \frac{B}{e^{-jw}-2} \]
+    \[ 16 = Ae^{-jw} - 2A + Be^{-jw} -4B \]
+    \[ A+B = 0 \]
+    \[ -2A-4B = 16 \]
+    Here, we get $A = 8$ and $B = -8$. Therefore,
+    \[ H(e^{jw}) = \frac{8}{e^{-jw} -4} - \frac{8}{e^{-jw}-2} \]
+    We know that Fourier transform of $a^nu[n]$ is $\frac{1}{1-ae^{-jw}}$. Therefore, our frequency response can be:
+    \[ H(e^{jw}) = \frac{-2}{1 - \frac{1}{4}e^{-jw}} + \frac{4}{1-\frac{1}{2}e^{-jw}}  \]
+    Finally, impulse response will be:
+    \[ h[n] = \left(-2(\frac{1}{4})^n + 4(\frac{1}{2})^n\right)u[n] \]
+    \item %write the solution of q4d
+    This is LTI system. Since $y[n] = x[n] * h[n]$, we can say that $Y(e^{jw}) = X(e^{jw}) \times H(e^{jw})$. We have already found frequency response at part (b). Therefore, now, we need to find $X(e^{jw})$ for given input $x[n] = (\frac{1}{4})^nu[n]$. \\ 
+    By using (Fourier transform of $a^nu[n]$ is $\frac{1}{1-ae^{-jw}}$)
+    \[ X(e^{jw}) = \frac{1}{1- \frac{1}{4}e^{-jw}} \]
+    Now, we can find $Y(e^{jw}) = X(e^{jw}) \times H(e^{jw})$
+    \[ Y(e^{jw}) = X(e^{jw}) \times H(e^{jw}) = \frac{1}{1- \frac{1}{4}e^{-jw}} \times (\frac{8}{e^{-jw} -4} - \frac{8}{e^{-jw}-2}) \]
+    \[ = \frac{4}{4 - e^{-jw}} \times (\frac{8}{e^{-jw} -4} - \frac{8}{e^{-jw}-2}) \]
+    \[ = \frac{4}{e^{-jw} -4} \times (- \frac{8}{e^{-jw} -4}) + \frac{8}{e^{-jw}-2}) \]
+    \[ = - \frac{32}{(e^{-jw} -4)^2} + (\frac{32}{(e^{-jw} -4)(e^{-jw} -2)}) \]
+    \[ = - \frac{32}{(e^{-jw} -4)^2} + \frac{16}{e^{-jw} -4} - \frac{16}{e^{-jw} -2} \]
+    \[ = - \frac{32}{(e^{-jw} -4)^2} + (\frac{-4}{1-\frac{1}{4}e^{-jw}}) - (\frac{-8}{1-\frac{1}{2}e^{-jw}}) \]
+    \[ Y(e^{jw}) = - \frac{2}{(1-\frac{1}{4}e^{-jw})^2} + (\frac{-4}{1-\frac{1}{4}e^{-jw}}) - (\frac{-8}{1-\frac{1}{2}e^{-jw}})  \]
+     By using (Fourier transform of $a^nu[n]$ is $\frac{1}{1-ae^{-jw}}$) and by using Fourier transform of $(n+1)a^nu[n]$ is $\frac{1}{(1-ae^{-jw})^2}$ \\
+   
+     \[y[n] = \left(-2(n+1)(\frac{1}{4})^n -4(\frac{1}{4})^n +8(\frac{1}{2})^n\right)u[n]  \]
+    
+    \end{enumerate}
+
+\item %write the solution of q5
+	\[ x[n]*h_1[n] + x[n]*h_2[n] = y[n] \]
+	\[ x[n]*(h_1[n] + h_2[n]) = y[n] \]
+	Therefore, the overall system's impulse response is $h[n] = h_1[n] + h_2[n]$. \\
+	Therefore, frequency response of the overall system is $H(e^{jw}) = H_1(e^{jw}) + H_2(e^{jw})$
+	\\
+	\\
+	For given $h_1n = (\frac{1}{3})^nu[n]$, frequency response is:
+	\[ H_1(e^{jw}) = \frac{1}{1-\frac{1}{3}e^{-jw}} \]
+	Now, substract $H_1(e^{jw})$ from frequency response of overall system $H(e^{jw})$
+	\[ H(e^{jw}) -H_1(e^{jw}) = H_2(e^{jw}) \]
+	\[ \frac{5e^{-jw}-12}{e^{-2jw} -7e^{-jw}+12} - \frac{1}{1-\frac{1}{3}e^{-jw}} = H_2(e^{jw}) \]
+	\[ \frac{5e^{-jw}-12}{(e^{-jw}-3)(e^{-jw}-4)} - \frac{3}{3-e^{-jw}} = H_2(e^{jw}) \]
+	\[ \frac{5e^{-jw}-12}{(e^{-jw}-3)(e^{-jw}-4)} + \frac{3}{e^{-jw}-3} = H_2(e^{jw}) \]
+	\[ \frac{5e^{-jw}-12}{(e^{-jw}-3)(e^{-jw}-4)} + \frac{3e^{-jw} -12}{(e^{-jw}-3)(e^{-jw}-4)} = H_2(e^{jw}) \]
+	\[ \frac{8(e^{-jw}-3)}{(e^{-jw}-3)(e^{-jw}-4)} = H_2(e^{jw}) \]
+	\[ H_2(e^{jw}) = \frac{8}{e^{-jw}-4}\]
+	\[ H_2(e^{jw}) = \frac{-2}{1- \frac{1}{4}e^{-jw}}\]
+	 By using (Fourier transform of $a^nu[n]$ is $\frac{1}{1-ae^{-jw}}$)
+	 \[ h_2[n] = -2(\frac{1}{4})^nu[n] \]
+
+\item %write the solution of q6
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q6a
+    Since this is LTI system, we know that $H(e^{jw}) = \frac{Y(e^{jw})}{X(e^{jw})}$. Therefore,
+    \[ H(e^{jw}) = \frac{Y(e^{jw})}{X(e^{jw})} = \frac{1}{1 - \frac{1}{6}e^{-jw} - \frac{1}{6}e^{-2jw}} \]
+    \[ Y(e^{jw}) - \frac{1}{6}e^{-jw}Y(e^{jw}) - \frac{1}{6}e^{-2jw}Y(e^{jw}) = X(e^{jw}) \]
+    By using Fourier transform of $y[n-n_0]$ is $e^{-jwn_0}Y(e^{jw})$ (i.e. time-shifting property), we get:
+    \[ y[n] - \frac{1}{6}y[n-1] - \frac{1}{6}y[n-2] = x[n] \]
+    \[ y[n] = x[n] + \frac{1}{6}y[n-1] + \frac{1}{6}y[n-2] \ \ \ [RESULT] \]
+    \item %write the solution of q6b
+    The block diagram is:
+    
+    \tikzset{%
+		block/.style    = {draw, thick, rectangle, minimum height = 3em,
+			minimum width = 3em},
+		sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+		input/.style    = {coordinate}, % Input
+		output/.style   = {coordinate} % Output
+	}
+	% Defining string as labels of certain blocks.
+	\newcommand{\suma}{\Large$+$}
+	\newcommand{\delay}{$D$}
+	
+	\begin{figure} [H]
+	\begin{tikzpicture}[auto, thick, node distance=3cm, >=triangle 45]
+	\draw
+	% Drawing the blocks of first filter :
+	node at (0, 0) [input] (inp) {\Large \textopenbullet}
+	
+	node [sum, right of=inp] (sum) {\suma}
+	node [output, right of=sum] (out1) {}
+	node [output, right of=out1] (out3) {}
+	node [output, right of=out3] (out) {}
+	node [output, right of=out] (out2) {\Large \textopenbullet}
+	node [output, above of=out] (temp7) {}
+	node [block, left of=temp7] (int7) {\delay}
+	node [block, left of=int7] (int8) {\delay}
+	node [output, left of=int8] (temp9) {}
+	node [output, above of=sum] (temp10) {}
+	node [output, below of=out] (temp1) {}
+	node [block, left of=temp1] (int3) {\delay}
+	node [output, left of=int3] (temp3) {}
+	node [output, left of=temp3] (temp4) {}
+	node [output, below of=sum] (temp2) {}
+	;
+	\draw[->](inp) -- node{$x[n]$} (sum);
+	
+	\draw[-](sum) -- (out1);
+	\draw[-](out1) -- (out3);
+	\draw[-*](out3) -- (out);
+	\draw[->](out) -- node{$y[n]$} (out2);
+	\draw[-](out) -- (temp7);
+	\draw[->](temp7) -- (int7);
+	\draw[->](int7) -- (int8);
+	\draw[-](int8) -- (temp9);
+	\draw[->](temp10) -- node{$\frac{1}{6}$} (sum);
+	\draw[-](out) -- (temp1);
+	\draw[->](temp1) -- (int3);
+	\draw[-](int3) -- (temp3);
+	\draw[-](temp3) -- (temp4);
+	\draw[->](temp4) -- node{$\frac{1}{6}$} (sum);
+	\end{tikzpicture}
+	\end{figure}	
+    
+    \item %write the solution of q6c
+    
+    \[ H(e^{jw}) = \frac{1}{1 - \frac{1}{6}e^{-jw} - \frac{1}{6}e^{-2jw}} = \frac{-6}{e^{-2jw} + e^{-jw} - 6} \]
+    \[ = \frac{-6}{(e^{-jw} +3) (e^{-jw} -2)} \]
+    \[ = \frac{-6}{(e^{-jw} +3) (e^{-jw} -2)} = \frac{A}{e^{-jw} +3} + \frac{B}{e^{-jw} -2} \]
+    \[ -6 = Ae^{-jw} - 2A +Be^{-jw} + 3B \]
+    \[ A+B = 0 \]
+    \[ -2A+3B = -6 \]
+    Here, we get $A = \frac{6}{5}$ and $B = -\frac{6}{5}$. Therefore,
+    \[ H(e^{jw}) = \frac{\frac{6}{5}}{e^{-jw} +3} + \frac{(-\frac{6}{5})}{e^{-jw} -2} \]
+    And it can be written as:
+    \[ H(e^{jw}) = \frac{\frac{2}{5}}{1 + \frac{1}{3}e^{-jw}} + \frac{\frac{3}{5}}{1 -\frac{1}{2}e^{-jw}} \]
+    We know that Fourier transform of $a^nu[n]$ is $\frac{1}{1-ae^{-jw}}$. Therefore, impulse response will be:
+    \[ h[n] = \left( \frac{2}{5}(-\frac{1}{3})^n + \frac{3}{5}(\frac{1}{2})^n \right)u[n] \]
+    
+    \end{enumerate}    
+
+\end{enumerate}
+\end{document}
+

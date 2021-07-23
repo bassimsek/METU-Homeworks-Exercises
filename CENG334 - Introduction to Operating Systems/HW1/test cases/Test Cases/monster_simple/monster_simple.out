@@ -1,0 +1,17 @@
+Player Message
+Monster M is Ready
+Map Size:10x10
+Door at (0,4)
+Player at (1,4)
+Alive Monster Count: 1
+Monster M at (4,4)
+______
+Player Message
+Map Size:10x10
+Door at (0,4)
+Player at (0,4)
+Alive Monster Count: 1
+Monster M at (4,4)
+______
+Game Over
+Player won by reaching the door

@@ -1,0 +1,4 @@
+izmir antalya 5
+istanbul edirne 3
+antalya ankara 7
+ankara istanbul 8

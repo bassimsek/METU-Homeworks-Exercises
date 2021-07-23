@@ -1,0 +1,56 @@
+Argument 1: '50'
+Argument 2: '90'
+Argument 3: '10'
+Argument 4: '16'
+
+Server to Monster Message:
+New Position:(1,1)
+Damage:0
+Player Coodinate:(10,9)
+Game Over: 0
+
+Monster to Server Response: Moving to (2,2)
+
+Server to Monster Message:
+New Position:(2,2)
+Damage:0
+Player Coodinate:(10,8)
+Game Over: 0
+
+Monster to Server Response: Moving to (3,3)
+
+Server to Monster Message:
+New Position:(3,3)
+Damage:0
+Player Coodinate:(10,7)
+Game Over: 0
+
+Monster to Server Response: Moving to (4,4)
+
+Server to Monster Message:
+New Position:(4,4)
+Damage:0
+Player Coodinate:(10,6)
+Game Over: 0
+
+Monster to Server Response: Moving to (5,5)
+
+Server to Monster Message:
+New Position:(5,5)
+Damage:0
+Player Coodinate:(10,5)
+Game Over: 0
+
+Monster to Server Response: Attacking with:9
+
+Server to Monster Message:
+New Position:(5,5)
+Damage:0
+Player Coodinate:(10,4)
+Game Over: 0
+
+Monster to Server Response: Attacking with:9
+
+Game Over: 1
+
+Exiting

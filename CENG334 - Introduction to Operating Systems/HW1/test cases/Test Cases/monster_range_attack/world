@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+export still_monsters=1
+exec ./test_world "$@"

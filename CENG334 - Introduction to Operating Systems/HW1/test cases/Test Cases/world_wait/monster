@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+export add_waits=1
+export log_prefix=world_wait
+export marg1=100
+export marg2=100
+export marg3=4
+export marg4=2
+exec ./test_monster "$@"

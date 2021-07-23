@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+export log_prefix=world_kill_1
+export parg3=3
+export parg4=4
+export parg5=0
+exec ./test_player "$@"

@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+export log_prefix=world_leave_1
+export parg3=1
+export parg4=1
+export parg5=1
+exec ./test_player "$@"
